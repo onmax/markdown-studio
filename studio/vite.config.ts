@@ -5,7 +5,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   plugins: [
     vue(),
     UnoCSS(),
@@ -29,7 +29,8 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./client', import.meta.url)),
     },
   },
+  base: command === 'build' ? '/__studio/' : '/',
   build: {
     outDir: 'dist/client',
   },
-})
+}))

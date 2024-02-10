@@ -10,5 +10,8 @@
   },
   "dependencies": {
     "vitepress": "1.0.0-rc.42"
+  },
+  "devDependencies": {
+    "markdown-studio": "workspace:*"
   }
 }
